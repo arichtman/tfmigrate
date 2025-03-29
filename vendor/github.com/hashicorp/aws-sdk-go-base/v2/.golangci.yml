@@ -1,0 +1,43 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
+issues:
+  max-per-linter: 0
+  max-same-issues: 0
+  exclude-rules:
+    - path: configtesting
+      linters:
+        - goconst
+
+linters:
+  disable-all: true
+  enable:
+    - dogsled
+    - errcheck
+    - errname
+    - exportloopref
+    - goconst
+    - gofmt
+    - gomnd
+    - gosimple
+    - ineffassign
+    - misspell
+    - staticcheck
+    - tenv
+    - unconvert
+    - unparam
+    - unused
+    - typecheck
+    - vet
+    - whitespace
+
+linters-settings:
+  goconst:
+    ignore-tests: true
+  gomnd:
+    settings:
+      mnd:
+        ignored-functions:
+          - strings.SplitN
+          - strings.SplitAfterN
+          - os.MkdirAll
